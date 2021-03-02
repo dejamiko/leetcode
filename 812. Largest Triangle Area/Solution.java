@@ -1,0 +1,17 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20360\viewh6500\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 class Solution \{\
+    public double largestTriangleArea(int[][] points) \{\
+        double ans=0;\
+        for(int i=0; i<points.length; ++i)\
+            for(int j=i+1; j<points.length; ++j)\
+                for(int k=j+1; k<points.length; ++k)\
+                    ans=Math.max(0.5*Math.abs((points[i][0]-points[k][0])*(points[j][1]-points[i][1])-(points[i][0]-points[j][0])*(points[k][1]-points[i][1])), ans);\
+        return ans;\
+    \}\
+\}}
